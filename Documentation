@@ -1,0 +1,35 @@
+EchoSolve _Bot: Documentation
+
+End-to-End architecture: (To fetch the Data)
+	Static Website (Azure Bot →
+Azure Function POST → 
+Databricks Serving Endpoint → 
+RAG over Vector Index on Delta table)
+Design:
+Azure Bot:
+Create a Azure Bot service
+Configuration: Add Azure function URL for messaging endpoint 
+Create password for APP id
+Azure Function:
+Create a Azure Function
+
+ 	
+Pass Environment variables:
+APPLICATIONINSIGHTS_CONNECTION_STRING, AzureWebJobsStorage, AzureWebJobsStorage__accountName, AzureWebJobsStorage__credential, DATABRICKS_ENDPOINT, DATABRICKS_HOST, DATABRICKS_TOKEN, MICROSOFT_APP_ID, MICROSOFT_APP_PASSWORD, MICROSOFT_APP_TENANT_ID
+Azure Databricks:
+1)Creating a delta table
+2) Creating a Vector database on top of delta table
+3)Creating RAG model 
+4)Creating serving endpoint
+
+End-to-End architecture: (To load the Data)
+
+Website 
+Logic App Azure  
+Azure Databricks (Delta Table)
+Design:
+Logic App Azure
+logic App Designer
+           Flow:
+          When an Http request received
+          Http Request: Call Databricks and load the data into  Delta table 
