@@ -1,0 +1,5 @@
+{
+ "statement": "INSERT INTO table_name(ticket_id, error_message, resolution, doc_text, created_at) VALUES ('', '', '', '', current_timestamp())",
+ "warehouse_id": "401cd8846ed522e2"
+}
+
